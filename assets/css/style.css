@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+body{
+    background-image: url(../img/wallpaper.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    padding: 20px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+

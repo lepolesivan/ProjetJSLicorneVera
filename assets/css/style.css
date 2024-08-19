@@ -7,6 +7,9 @@ body{
     font-family: "Quicksand", sans-serif;
     color: white;
 }
+h1{
+    text-align: center;
+}
 
 #container {
     text-align: center;
@@ -18,3 +21,38 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+#licorneImg, #lapinImg{
+    width: 20%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+#dialogueBox{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    display: none;
+}
+
+button{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #ffffff;
+}
+
+#nextButton, #restartButton{
+    display: none;
+}
+

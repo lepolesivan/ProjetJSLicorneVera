@@ -38,7 +38,7 @@ function displayNextLine(){
         const P = document.createElement("p");
         P.textContent = `${LINE.text}`;
         if(LINE.user === "Licorne Codeuse"){
-            P.className = "unicorne";
+            P.className = "unicorn";
             licorneImg.classList.add("highlight");
             lapinImg.classList.remove("highlight");
         }else if(LINE.user === "Lapin Bug"){

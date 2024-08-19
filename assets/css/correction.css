@@ -23,7 +23,7 @@ h1{
     justify-content: space-evenly;
 }
 
-#licorneImg, #lapinImg{
+#unicornImg, #rabbitImg{
     display: none; /* Caché par défaut */
     width: 20%;
     margin-bottom: 20px;
@@ -71,11 +71,11 @@ button{
 }
 
 /* Style des images avec une bordure lorsque mises en surbrillance */
-#licorneImg.highlight {
+#unicornImg.highlight {
     border: 5px solid #f11fdf;
 }
 
-#lapinImg.highlight {
+#rabbitImg.highlight {
     border: 5px solid #334df1;
 }
 
@@ -86,8 +86,8 @@ button{
         margin-bottom: 10%;
     }
 
-    #licorneImg
-, #lapinImg {
+    #unicornImg
+, #rabbitImg {
         display: none; /* Caché par défaut */
         width: 50%; /* Taille des images */
         margin-bottom: 20px; /* Espacement en bas des images */

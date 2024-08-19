@@ -12,15 +12,15 @@ const DIALOGUE = [
 
 let lancerDialogue = document.querySelector("#startButton");
 const BOITEDEDIALOGUE = document.querySelector("#dialogueBox");
+let text = document.querySelector("#welcomeText");
+let licorneImg = document.querySelector("#licorneImg");
+let lapinImg = document.querySelector("#lapinImg");
+let suivant = document.querySelector("#nextButton");
 
 lancerDialogue.addEventListener("click", function(event){
-    let text = document.querySelector("#welcomeText");
-    let licorneImg = document.querySelector("#licorneImg");
-    let lapinImg = document.querySelector("#lapinImg");
-    let suivant = document.querySelector("#nextButton");
+    
     lancerDialogue.style.display = "none";
     text.style.display = "none";
-
     lapinImg.style.display = "block";
     licorneImg.style.display = "block";
     BOITEDEDIALOGUE.style.display = "block";
@@ -33,12 +33,22 @@ let currentIndex = 0;
 
 function displayNextLine(){
     if(currentIndex < DIALOGUE.length){
-        currentIndex++;
         const LINE = DIALOGUE[currentIndex];
-        console.log(LINE.text);
+        BOITEDEDIALOGUE.innerHTML = '';
         const P = document.createElement("p");
         P.textContent = `${LINE.text}`;
+        if(LINE.user === "Licorne Codeuse"){
+            P.className = "unicorne";
+            licorneImg.classList.add("highlight");
+            lapinImg.classList.remove("highlight");
+        }else if(LINE.user === "Lapin Bug"){
+            P.className = "rabbit";
+            lapinImg.classList.add("highlight");
+            licorneImg.classList.remove("highlight");
+        }
         BOITEDEDIALOGUE.appendChild(P);
+        currentIndex++;
+
     }else{
         document.getElementById("nextButton").style.display = "none";
         document.getElementById("restartButton").style.display = "inline-block";
@@ -47,4 +57,16 @@ function displayNextLine(){
 
 document.querySelector("#nextButton").addEventListener("click", function(event){
     displayNextLine();
+});
+
+document.getElementById("restartButton").addEventListener("click", function(event){
+    lancerDialogue.style.display = "inlin-block";
+    text.style.display = "block";
+    lapinImg.style.display = "none";
+    licorneImg.style.display = "none";
+    BOITEDEDIALOGUE.style.display = "none";
+    suivant.style.display = "none";
+    lancerDialogue.style.display = "inline-block";
+    document.getElementById("restartButton").style.display = "none";
+    currentIndex = 0;
 });

@@ -11,23 +11,40 @@ const DIALOGUE = [
 ];
 
 let lancerDialogue = document.querySelector("#startButton");
-// Cachez le texte de bienvenue et le bouton "Lancer le dialogue".
-// Affichez les images et la boîte de dialogue et le bouton suivant.
+const BOITEDEDIALOGUE = document.querySelector("#dialogueBox");
 
 lancerDialogue.addEventListener("click", function(event){
     let text = document.querySelector("#welcomeText");
     let licorneImg = document.querySelector("#licorneImg");
     let lapinImg = document.querySelector("#lapinImg");
-    let boiteDialogue = document.querySelector("#dialogueBox");
     let suivant = document.querySelector("#nextButton");
-    
     lancerDialogue.style.display = "none";
     text.style.display = "none";
 
     lapinImg.style.display = "block";
     licorneImg.style.display = "block";
-    boiteDialogue.style.display = "block";
-    suivant .style.display = "inline-block";
+    BOITEDEDIALOGUE.style.display = "block";
+    suivant.style.display = "inline-block";
 
-    
+    displayNextLine();
+});
+
+let currentIndex = 0;
+
+function displayNextLine(){
+    if(currentIndex < DIALOGUE.length){
+        currentIndex++;
+        const LINE = DIALOGUE[currentIndex];
+        console.log(LINE.text);
+        const P = document.createElement("p");
+        P.textContent = `${LINE.text}`;
+        BOITEDEDIALOGUE.appendChild(P);
+    }else{
+        document.getElementById("nextButton").style.display = "none";
+        document.getElementById("restartButton").style.display = "inline-block";
+    }
+};
+
+document.querySelector("#nextButton").addEventListener("click", function(event){
+    displayNextLine();
 });

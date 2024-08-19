@@ -39,7 +39,9 @@ h1{
     margin: 0 auto;
     display: none;
 }
-
+p{
+    color: black;
+}
 button{
     margin: 10px;
     padding: 10px 20px;
